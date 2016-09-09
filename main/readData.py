@@ -8,7 +8,7 @@ warehouseLocation = 'file:////home/dharamendra/PycharmProjects/MalwareDetection'
 #sc = SparkContext(conf=SparkConf().setAppName("MalwareClassifier"))
 spark = SparkSession\
         .builder\
-        .appName("NGramExample")\
+        .appName("MalwareDetection")\
         .config('spark.sql.warehouse.dir',warehouseLocation)\
         .getOrCreate()
 sc=spark.sparkContext;
