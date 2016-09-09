@@ -1,10 +1,17 @@
 import urllib
 from pyspark import SparkContext, SparkConf
-from pyspark.sql import SQLContext, Row
+from pyspark.sql import SQLContext, Row,SparkSession
 import re
 import os
 
-sc = SparkContext(conf=SparkConf().setAppName("MalwareClassifier"))
+warehouseLocation = 'file:////home/dharamendra/PycharmProjects/MalwareDetection'
+#sc = SparkContext(conf=SparkConf().setAppName("MalwareClassifier"))
+spark = SparkSession\
+        .builder\
+        .appName("NGramExample")\
+        .config('spark.sql.warehouse.dir',warehouseLocation)\
+        .getOrCreate()
+sc=spark.sparkContext;
 
 
 def cleanDoc(bytefileData):
