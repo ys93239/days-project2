@@ -66,6 +66,7 @@ def main():
     wholeTextFileNameRDD = cleanFile.map(lambda (x, y): (os.path.splitext(os.path.basename(x))[0], y))
 
 
+
     # cleanFile.saveAsTextFile("C:\\Users\Shubhi\Desktop\cleanFile.txt")
 
     # =========================================================================
