@@ -99,4 +99,3 @@ def main():
     # Reading and wrir=ting to Parquet file file from s3
     # =========================================================================
     schemaByte.write.parquet("C:\\Users\Shubhi\Desktop\cleanFile.parquet")     #"Change the address pointng to S3"
-    parquetFileDF = spark.read.parquet("C:\\Users\Shubhi\Desktop\cleanFile.parquet")     #"Change the address pointng to S3"
