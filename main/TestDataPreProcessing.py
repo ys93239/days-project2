@@ -60,9 +60,9 @@ def main():
 
     hashFileLableTestPair=entirehashFileTestData.join(entireLabelTestData,numPartitions=1000)
     hashFileLableTestRDD=hashFileLableTestPair.values()
-    hashFileLableTestRDDPair=hashFileLableTestPair.keyBy(lambda line:line[0]).mapValues(lambda line:line[1])
+    hashFileLableTestRDDPair=hashFileLableTestRDD.keyBy(lambda line:line[0]).mapValues(lambda line:line[1])
     dataSetTest = hashFileLableTestRDDPair.join(wholeTestTextFileNameRDD,numPartitions=100)
-    finalDataTestSetRDD = dataSetTest.map(lambda (x, y): (x, y[0], y[1]))
+    finalDataTestSetRDD = dataSetTest.map(lambda (x, y):(x, y[0], y[1]))
 
     # =========================================================================
     # creating DATAFRAME
