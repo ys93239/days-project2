@@ -20,7 +20,7 @@ def cleanDoc(bytefileData):
     filteredFile = re.sub("\?|\n|\r", "", bytefileData)
 
     # Removing line pointers.
-    removePointer = [word.encode('utf-8') for word in filteredFile.split() if len(word) < 3]
+    removePointer = [word.encode('utf-8').upper() for word in filteredFile.split() if len(word) < 3]
     return removePointer
 
 
